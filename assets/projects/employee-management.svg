@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" fill="none">
+  <defs>
+    <linearGradient id="sidebar" x1="0" y1="0" x2="0" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- App background -->
+  <rect width="640" height="360" fill="#f4f7fb"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="0" width="148" height="360" fill="url(#sidebar)"/>
+  <rect x="18" y="22" width="38" height="38" rx="10" fill="rgba(37,99,235,0.2)"/>
+  <text x="37" y="46" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#93c5fd">EMS</text>
+  <text x="64" y="36" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#fff">Employee Hub</text>
+  <text x="64" y="50" font-family="Inter, sans-serif" font-size="8" fill="#cbd5e1">Management Console</text>
+
+  <rect x="14" y="82" width="120" height="30" rx="8" fill="rgba(255,255,255,0.08)"/>
+  <text x="28" y="101" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#fff">Dashboard</text>
+
+  <text x="28" y="136" font-family="Inter, sans-serif" font-size="10" fill="#cbd5e1">All Employees</text>
+
+  <circle cx="24" cy="334" r="4" fill="#22c55e"/>
+  <text x="34" y="338" font-family="Inter, sans-serif" font-size="8" fill="#cbd5e1">Connected to MySQL</text>
+
+  <!-- Main content -->
+  <text x="168" y="34" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#0f172a">Dashboard</text>
+  <text x="168" y="50" font-family="Inter, sans-serif" font-size="9" fill="#64748b">Overview of your workforce</text>
+
+  <rect x="500" y="18" width="118" height="32" rx="10" fill="#2563eb" filter="url(#shadow)"/>
+  <text x="559" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#fff">+ Add Employee</text>
+
+  <!-- Stat cards -->
+  <rect x="168" y="66" width="142" height="62" rx="12" fill="#fff" stroke="#e2e8f0" filter="url(#shadow)"/>
+  <text x="184" y="88" font-family="Inter, sans-serif" font-size="9" fill="#64748b">Total Employees</text>
+  <text x="184" y="114" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0f172a">12</text>
+
+  <rect x="322" y="66" width="142" height="62" rx="12" fill="#fff" stroke="#e2e8f0" filter="url(#shadow)"/>
+  <text x="338" y="88" font-family="Inter, sans-serif" font-size="9" fill="#64748b">Departments</text>
+  <text x="338" y="114" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#0f172a">5</text>
+
+  <rect x="476" y="66" width="142" height="62" rx="12" fill="#fff" stroke="#e2e8f0" filter="url(#shadow)"/>
+  <text x="492" y="88" font-family="Inter, sans-serif" font-size="9" fill="#64748b">Average Salary</text>
+  <text x="492" y="114" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#0f172a">?58,400</text>
+
+  <!-- Table panel -->
+  <rect x="168" y="144" width="450" height="196" rx="14" fill="#fff" stroke="#e2e8f0" filter="url(#shadow)"/>
+
+  <rect x="184" y="160" width="280" height="28" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="198" y="179" font-family="Inter, sans-serif" font-size="9" fill="#94a3b8">Search by ID, name, or department...</text>
+
+  <rect x="548" y="160" width="54" height="28" rx="8" fill="#eef2ff"/>
+  <text x="575" y="179" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="600" fill="#3730a3">Refresh</text>
+
+  <!-- Table header -->
+  <rect x="184" y="200" width="418" height="28" rx="4" fill="#f8fafc"/>
+  <text x="198" y="218" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#64748b">ID</text>
+  <text x="238" y="218" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#64748b">NAME</text>
+  <text x="350" y="218" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#64748b">DEPARTMENT</text>
+  <text x="450" y="218" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#64748b">SALARY</text>
+  <text x="540" y="218" font-family="Inter, sans-serif" font-size="8" font-weight="700" fill="#64748b">ACTIONS</text>
+
+  <!-- Row 1 -->
+  <text x="198" y="246" font-family="JetBrains Mono, monospace" font-size="9" fill="#64748b">101</text>
+  <text x="238" y="246" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#0f172a">Amit Kumar</text>
+  <text x="350" y="246" font-family="Inter, sans-serif" font-size="10" fill="#475569">Engineering</text>
+  <text x="450" y="246" font-family="Inter, sans-serif" font-size="10" fill="#2563eb">?65,000</text>
+  <text x="540" y="246" font-family="Inter, sans-serif" font-size="9" fill="#2563eb">Edit</text>
+  <text x="572" y="246" font-family="Inter, sans-serif" font-size="9" fill="#dc2626">Del</text>
+  <line x1="184" y1="254" x2="602" y2="254" stroke="#e2e8f0"/>
+
+  <!-- Row 2 -->
+  <text x="198" y="276" font-family="JetBrains Mono, monospace" font-size="9" fill="#64748b">102</text>
+  <text x="238" y="276" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#0f172a">Priya Sharma</text>
+  <text x="350" y="276" font-family="Inter, sans-serif" font-size="10" fill="#475569">HR</text>
+  <text x="450" y="276" font-family="Inter, sans-serif" font-size="10" fill="#2563eb">?52,000</text>
+  <text x="540" y="276" font-family="Inter, sans-serif" font-size="9" fill="#2563eb">Edit</text>
+  <text x="572" y="276" font-family="Inter, sans-serif" font-size="9" fill="#dc2626">Del</text>
+  <line x1="184" y1="284" x2="602" y2="284" stroke="#e2e8f0"/>
+
+  <!-- Row 3 -->
+  <text x="198" y="306" font-family="JetBrains Mono, monospace" font-size="9" fill="#64748b">103</text>
+  <text x="238" y="306" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#0f172a">Rahul Verma</text>
+  <text x="350" y="306" font-family="Inter, sans-serif" font-size="10" fill="#475569">Finance</text>
+  <text x="450" y="306" font-family="Inter, sans-serif" font-size="10" fill="#2563eb">?58,500</text>
+  <text x="540" y="306" font-family="Inter, sans-serif" font-size="9" fill="#2563eb">Edit</text>
+  <text x="572" y="306" font-family="Inter, sans-serif" font-size="9" fill="#dc2626">Del</text>
+  <line x1="184" y1="314" x2="602" y2="314" stroke="#e2e8f0"/>
+
+  <!-- Row 4 -->
+  <text x="198" y="336" font-family="JetBrains Mono, monospace" font-size="9" fill="#64748b">104</text>
+  <text x="238" y="336" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#0f172a">Sneha Patel</text>
+  <text x="350" y="336" font-family="Inter, sans-serif" font-size="10" fill="#475569">Marketing</text>
+  <text x="450" y="336" font-family="Inter, sans-serif" font-size="10" fill="#2563eb">?54,200</text>
+  <text x="540" y="336" font-family="Inter, sans-serif" font-size="9" fill="#2563eb">Edit</text>
+  <text x="572" y="336" font-family="Inter, sans-serif" font-size="9" fill="#dc2626">Del</text>
+</svg>

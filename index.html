@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Amit Kumar — Computer Science student and aspiring Java Developer. Portfolio showcasing skills, projects, and experience." />
+  <title>Amit Kumar | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo magnetic" data-strength="0.3">
+        <span class="logo-bracket">&lt;</span>AK<span class="logo-bracket">/&gt;</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact" class="nav-cta magnetic" data-strength="0.2">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-grid"></div>
+    <div class="container hero-layout">
+      <div class="hero-content">
+        <p class="hero-greeting animate-in">Hello, I'm</p>
+        <h1 class="hero-name">
+          <span class="name-glow" aria-hidden="true"></span>
+          <span class="name-wrapper">
+            <span class="name-track" id="heroName">Amit Kumar</span>
+          </span>
+        </h1>
+        <p class="hero-title animate-in">
+          <span id="typedText"></span><span class="typed-cursor">|</span>
+        </p>
+        <p class="hero-desc animate-in">
+          Pursuing B.Tech in CS &amp; IT with a strong foundation in Java, OOP, and Data Structures.
+          Seeking a Java Developer internship to build real-world solutions and grow as a developer.
+        </p>
+        <div class="hero-actions animate-in">
+          <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary magnetic"
+            data-strength="0.25">
+            <span>View Resume</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+              <path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3" />
+            </svg>
+          </a>
+          <a href="#projects" class="btn btn-outline magnetic" data-strength="0.25">
+            <span>View Projects</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        <div class="hero-social animate-in">
+          <a href="https://github.com/Amit7304" target="_blank" rel="noopener noreferrer" class="social-btn"
+            aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.665-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/amit-kumar-7304-" target="_blank" rel="noopener noreferrer"
+            class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="mailto:akrathore7304@gmail.com" class="social-btn" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-profile">
+        <div class="profile-frame">
+          <img src="assets/profile.png" alt="Amit Kumar" class="profile-img"
+            onerror="this.onerror=null; this.src='assets/profile-placeholder.svg';" />
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
+      <span class="scroll-text">Scroll</span>
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+    </a>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="section-number">01.</span> About Me</h2>
+        <div class="about-grid">
+          <div class="about-text stagger-item">
+            <p>
+              I'm a motivated Computer Science &amp; Information Technology student at
+              <strong>Chameli Devi Group of Institutions</strong>, currently in my 6th semester.
+              I'm passionate about software development and eager to apply my programming skills
+              in a professional environment.
+            </p>
+            <p>
+              Passionate Java Developer with a strong foundation in Object-Oriented Programming, Data Structures &
+              Algorithms, and SQL. I enjoy building scalable applications and continuously improving my problem-solving
+              skills. Currently expanding my expertise in Backend Development using JDBC, Servlets, JSP, and Spring
+              Boot.
+            </p>
+            <div class="code-snippet">
+              <div class="code-header">
+                <span class="code-dot red"></span>
+                <span class="code-dot yellow"></span>
+                <span class="code-dot green"></span>
+                <span class="code-filename">developer.java</span>
+              </div>
+              <pre><code><span class="code-keyword">class</span> <span class="code-class">Developer</span> {
+  <span class="code-keyword">String</span> name = <span class="code-string">"Amit Kumar"</span>;
+  <span class="code-keyword">String</span>[] skills = {<span class="code-string">"Java"</span>, <span class="code-string">"C++"</span>, <span class="code-string">"Python"</span>};
+  <span class="code-keyword">boolean</span> seekingInternship = <span class="code-bool">true</span>;
+}</code></pre>
+            </div>
+          </div>
+          <div class="about-highlights" data-stagger>
+            <div class="highlight-card tilt-card stagger-item" data-tilt>
+              <div class="highlight-glow"></div>
+              <span class="highlight-icon">🎓</span>
+              <div>
+                <h3>B.Tech CS &amp; IT</h3>
+                <p>6th Semester</p>
+              </div>
+            </div>
+            <div class="highlight-card tilt-card stagger-item" data-tilt>
+              <div class="highlight-glow"></div>
+              <span class="highlight-icon">💻</span>
+              <div>
+                <h3>Java &amp; C++</h3>
+                <p>Core Languages</p>
+              </div>
+            </div>
+            <div class="highlight-card tilt-card stagger-item" data-tilt>
+              <div class="highlight-glow"></div>
+              <span class="highlight-icon">🚀</span>
+              <div>
+                <h3>Internship Ready</h3>
+                <p>Seeking Opportunities</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-compact section-alt" id="education">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="section-number">02.</span> Education</h2>
+        <div class="education-grid" data-stagger>
+          <div class="edu-card edu-card-main stagger-item">
+            <span class="edu-year">Present</span>
+            <h3>B.Tech — Computer Science &amp; IT</h3>
+            <p>Chameli Devi Group of Institutions · 6th Semester</p>
+            <span class="edu-badge">In Progress</span>
+          </div>
+          <div class="edu-card stagger-item">
+            <span class="edu-year">2021</span>
+            <h3>Higher Secondary (12th)</h3>
+            <p>M.P. Board</p>
+            <span class="edu-score">89%</span>
+          </div>
+          <div class="edu-card stagger-item">
+            <span class="edu-year">2019</span>
+            <h3>Secondary (10th)</h3>
+            <p>M.P. Board</p>
+            <span class="edu-score">89%</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-compact" id="skills">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="section-number">03.</span> Skills</h2>
+        <div class="stack-path" data-stagger>
+          <div class="stack-path-line" id="stackPathLine"></div>
+
+          <div class="stack-node stagger-item">
+            <div class="stack-panel">
+              <span class="stack-level">01 · Languages</span>
+              <h3>Programming Languages</h3>
+              <div class="stack-icons">
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                    alt="" /><span>Java</span></div>
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                    alt="" /><span>C++</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-node stagger-item">
+            <div class="stack-panel">
+              <span class="stack-level">02 · Concepts</span>
+              <h3>Core Java Concepts</h3>
+              <div class="stack-icons">
+                <div class="stack-icon-tile stack-text-tile"><span>OOP</span></div>
+                <div class="stack-icon-tile stack-text-tile"><span>Collections Framework</span></div>
+                <div class="stack-icon-tile stack-text-tile"><span>Exceptions Handling</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-node stagger-item">
+            <div class="stack-panel">
+              <span class="stack-level">03 · Backend</span>
+              <h3>Backend Development</h3>
+              <div class="stack-icons">
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                    alt="" /><span>JDBC</span></div>
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"
+                    alt="" /><span>REST APIs</span></div>
+                <div class="stack-icon-tile stack-learning"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+                    alt="" /><span>Spring Boot</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-node stagger-item">
+            <div class="stack-panel">
+              <span class="stack-level">04 · Database</span>
+              <h3>Database</h3>
+              <div class="stack-icons">
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                    alt="" /><span>SQL</span></div>
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
+                    alt="" /><span>MySQL</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-node stagger-item">
+            <div class="stack-panel">
+              <span class="stack-level">05 · Frontend</span>
+              <h3>Frontend</h3>
+              <div class="stack-icons">
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                    alt="" /><span>HTML5</span></div>
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                    alt="" /><span>CSS3</span></div>
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                    alt="" /><span>JavaScript</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stack-node stagger-item">
+            <div class="stack-panel">
+              <span class="stack-level">06 · Tools</span>
+              <h3>Tools &amp; Platforms</h3>
+              <div class="stack-icons">
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                    alt="" /><span>Git</span></div>
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                    alt="" /><span>GitHub</span></div>
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+                    alt="" /><span>VS Code</span></div>
+                <div class="stack-icon-tile"><img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg"
+                    alt="" /><span>IntelliJ</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="projects">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="section-number">04.</span> Projects &amp; Training</h2>
+        <div class="projects-grid" data-stagger>
+          <article class="project-card tilt-card stagger-item" data-tilt>
+            <div class="project-glow"></div>
+            <div class="project-number">01</div>
+            <div class="project-img-wrap">
+              <img src="assets/projects/sprintly.png" alt="Sprintly — Kanban sprint board with drag-and-drop task management"
+                class="project-img" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <div class="project-icon-wrap">
+                  <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="18" rx="1" />
+                    <rect x="14" y="3" width="7" height="12" rx="1" />
+                  </svg>
+                </div>
+                <span class="project-tech">Next.js · TypeScript · Supabase</span>
+              </div>
+              <h3>Sprintly — Kanban Sprint Board</h3>
+              <p>
+                Full-stack team task manager with drag-and-drop Kanban columns (Backlog, In Progress, Review, Done),
+                role-based permissions, WIP limits, real-time updates, dashboard analytics, notifications,
+                and a backend data-cleaning pipeline for imported tasks.
+              </p>
+              <div class="project-footer">
+                <span class="project-status">Full Stack</span>
+                <div class="project-links">
+                  <a href="https://github.com/Amit7304/Sprintly" target="_blank" rel="noopener noreferrer"
+                    class="project-link" aria-label="View Sprintly on GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.665-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub
+                  </a>
+                  <a href="https://sprintly-nu.vercel.app" target="_blank" rel="noopener noreferrer"
+                    class="project-link">Live →</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="project-card tilt-card stagger-item" data-tilt>
+            <div class="project-glow"></div>
+            <div class="project-number">02</div>
+            <div class="project-img-wrap">
+              <img src="assets/projects/fake-news-detection.svg" alt="Fake News Detection System — ML classifier interface"
+                class="project-img" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <div class="project-icon-wrap">
+                  <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                    <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
+                  </svg>
+                </div>
+                <span class="project-tech">Python · ML</span>
+              </div>
+              <h3>Fake News Detection System</h3>
+              <p>
+                Built during a Python with Machine Learning training program. A system that classifies
+                news articles as real or fake using ML techniques.
+              </p>
+              <div class="project-footer">
+                <span class="project-status">Completed</span>
+                <span class="project-arrow">→</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card tilt-card stagger-item" data-tilt>
+            <div class="project-glow"></div>
+            <div class="project-number">03</div>
+            <div class="project-img-wrap">
+              <img src="assets/projects/employee-management.svg"
+                alt="Employee Management System — employee table and dashboard"
+                class="project-img" loading="lazy" />
+            </div>
+            <div class="project-body">
+              <div class="project-header">
+                <div class="project-icon-wrap">
+                  <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                  </svg>
+                </div>
+                <span class="project-tech">Java · JDBC · MySQL</span>
+              </div>
+              <h3>Employee Management System</h3>
+              <p>
+                Java CRUD application using the DAO design pattern with JDBC and MySQL. Includes a console app
+                and a web UI with employee search, add/edit/delete, and dashboard stats for headcount,
+                departments, and average salary — served via a Java HTTP API server.
+              </p>
+              <div class="project-footer">
+                <span class="project-status">Full Stack</span>
+                <div class="project-links">
+                  <a href="https://github.com/Amit7304/EmployeeManagementSystem" target="_blank"
+                    rel="noopener noreferrer" class="project-link" aria-label="View Employee Management System on GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.665-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certifications">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="section-number">05.</span> Certifications</h2>
+        <div class="cert-grid" data-stagger>
+          <div class="cert-card tilt-card stagger-item" data-tilt>
+            <div class="cert-shine"></div>
+            <div class="cert-badge">NPTEL</div>
+            <h3>Programming in Java</h3>
+            <p>Certified course from NPTEL covering core Java programming concepts.</p>
+            <div class="cert-icon">☕</div>
+          </div>
+          <div class="cert-card tilt-card stagger-item" data-tilt>
+            <div class="cert-shine"></div>
+            <div class="cert-badge">ML</div>
+            <h3>Python with Machine Learning</h3>
+            <p>Internship program certification in Python and machine learning fundamentals.</p>
+            <div class="cert-icon">🤖</div>
+          </div>
+          <div class="cert-card tilt-card stagger-item" data-tilt>
+            <div class="cert-shine"></div>
+            <div class="cert-badge">Java</div>
+            <h3>CRT — Core Java Programming</h3>
+            <p>Certificate in Core Java programming from CRT training program.</p>
+            <div class="cert-icon">📜</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="activities">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="section-number">06.</span> Extracurricular</h2>
+        <div class="activities-list" data-stagger>
+          <div class="activity-item tilt-card stagger-item" data-tilt>
+            <div class="activity-icon-wrap">🏆</div>
+            <div>
+              <h3>Hackathon Participant</h3>
+              <p>Competed in hackathons, collaborating under pressure to build innovative solutions.</p>
+            </div>
+            <div class="activity-tag">Competitive</div>
+          </div>
+          <div class="activity-item tilt-card stagger-item" data-tilt>
+            <div class="activity-icon-wrap">🤝</div>
+            <div>
+              <h3>Event Volunteering</h3>
+              <p>Volunteered at software events, seminars, and technical gatherings on campus.</p>
+            </div>
+            <div class="activity-tag">Community</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <h2 class="section-title reveal"><span class="section-number">07.</span> Get In Touch</h2>
+        <p class="contact-intro reveal">
+          I'm currently open to Java Developer internship opportunities.
+          Whether you have a question or just want to say hi, feel free to reach out!
+        </p>
+        <div class="contact-cards" data-stagger>
+          <a href="mailto:akrathore7304@gmail.com" class="contact-card tilt-card stagger-item" data-tilt>
+            <div class="contact-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">Email</span>
+              <span class="contact-value">akrathore7304@gmail.com</span>
+            </div>
+          </a>
+          <a href="tel:+917582088819" class="contact-card tilt-card stagger-item" data-tilt>
+            <div class="contact-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">+91 75820 88819</span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/amit-kumar-7304-" target="_blank" rel="noopener noreferrer"
+            class="contact-card tilt-card stagger-item" data-tilt>
+            <div class="contact-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">amit-kumar-7304</span>
+            </div>
+          </a>
+          <a href="https://github.com/Amit7304" target="_blank" rel="noopener noreferrer"
+            class="contact-card tilt-card stagger-item" data-tilt>
+            <div class="contact-icon-wrap">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.665-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </div>
+            <div>
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">Amit7304</span>
+            </div>
+          </a>
+        </div>
+        <a href="mailto:akrathore7304@gmail.com" class="btn btn-primary btn-large magnetic reveal" data-strength="0.2">
+          <span>Say Hello</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Designed &amp; built by <strong>Amit Kumar</strong></p>
+      <p class="footer-year">&copy; 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
