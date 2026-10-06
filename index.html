@@ -5,564 +5,1407 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Amit Kumar — Computer Science student and aspiring Java Developer. Portfolio showcasing skills, projects, and experience." />
-  <title>Amit Kumar | Portfolio</title>
+    content="Amit Kumar — Software Developer specializing in Java, Data Structures & Algorithms, Web Development, and Backend Systems. Portfolio showcasing selected software projects, problem solving, and technical skills." />
+  <meta name="keywords"
+    content="Amit Kumar, Software Developer, Java Developer, DSA, Web Development, Backend, Portfolio" />
+  <meta name="author" content="Amit Kumar" />
+  <title>Amit Kumar — Software Developer | Portfolio</title>
+
+  <!-- Google Fonts: Inter, Plus Jakarta Sans, JetBrains Mono, Syne -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap"
     rel="stylesheet" />
+
+  <!-- Devicons for crisp tech stack logos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css?v=20261006_brand_size" />
 </head>
 
 <body>
-  <div class="scroll-progress" id="scrollProgress"></div>
-  <div class="cursor-glow" id="cursorGlow"></div>
+  <!-- Background Grid & Architectural Guides -->
+  <div class="global-grid" aria-hidden="true">
+    <div class="grid-line grid-line-v-1"></div>
+    <div class="grid-line grid-line-v-2"></div>
+    <div class="grid-line grid-line-v-3"></div>
+  </div>
 
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="#home" class="nav-logo magnetic" data-strength="0.3">
-        <span class="logo-bracket">&lt;</span>AK<span class="logo-bracket">/&gt;</span>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <a href="#hero" class="brand-link" aria-label="Amit Kumar — Home">
+        <span class="brand-name">AMIT KUMAR</span>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">HOME</a></li>
+          <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+          <li><a href="#skills" class="nav-link">SKILLS</a></li>
+          <li><a href="#education" class="nav-link">EDUCATION</a></li>
+          <li><a href="#about" class="nav-link">ABOUT</a></li>
+          <li><a href="#resume" class="nav-link">RESUME</a></li>
+          <li><a href="#contact" class="nav-link nav-contact-btn">CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
       </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact" class="nav-cta magnetic" data-strength="0.2">Contact</a></li>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <ul class="mobile-nav-list">
+        <li><a href="#hero" class="mobile-nav-link">01 // HOME</a></li>
+        <li><a href="#projects" class="mobile-nav-link">02 // PROJECTS</a></li>
+        <li><a href="#skills" class="mobile-nav-link">03 // SKILLS</a></li>
+        <li><a href="#education" class="mobile-nav-link">04 // EDUCATION &amp; CERTIFICATIONS</a></li>
+        <li><a href="#about" class="mobile-nav-link">05 // ABOUT ME</a></li>
+        <li><a href="#resume" class="mobile-nav-link">06 // RESUME</a></li>
+        <li><a href="#contact" class="mobile-nav-link">07 // CONTACT</a></li>
       </ul>
-    </div>
-  </nav>
-
-  <header class="hero" id="home">
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
-    <div class="hero-orbs">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
-    <div class="hero-grid"></div>
-    <div class="container hero-layout">
-      <div class="hero-content">
-        <p class="hero-greeting animate-in">Hello, I'm</p>
-        <h1 class="hero-name">
-          <span class="name-glow" aria-hidden="true"></span>
-          <span class="name-wrapper">
-            <span class="name-track" id="heroName">Amit Kumar</span>
-          </span>
-        </h1>
-        <p class="hero-title animate-in">
-          <span id="typedText"></span><span class="typed-cursor">|</span>
-        </p>
-        <p class="hero-desc animate-in">
-          Pursuing B.Tech in CS &amp; IT with a strong foundation in Java, OOP, and Data Structures.
-          Seeking a Java Developer internship to build real-world solutions and grow as a developer.
-        </p>
-        <div class="hero-actions animate-in">
-          <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary magnetic"
-            data-strength="0.25">
-            <span>View Resume</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-              <path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3" />
-            </svg>
-          </a>
-          <a href="#projects" class="btn btn-outline magnetic" data-strength="0.25">
-            <span>View Projects</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-        <div class="hero-social animate-in">
-          <a href="https://github.com/Amit7304" target="_blank" rel="noopener noreferrer" class="social-btn"
-            aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.665-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/amit-kumar-7304-" target="_blank" rel="noopener noreferrer"
-            class="social-btn" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-          <a href="mailto:akrathore7304@gmail.com" class="social-btn" aria-label="Email">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-profile">
-        <div class="profile-frame">
-          <img src="assets/profile.png" alt="Amit Kumar" class="profile-img"
-            onerror="this.onerror=null; this.src='assets/profile-placeholder.svg';" />
-        </div>
+      <div class="mobile-drawer-footer">
+        <span class="mono-meta">BASED IN INDIA · AVAILABLE FOR ROLES</span>
       </div>
     </div>
-    <a href="#about" class="scroll-indicator" aria-label="Scroll down">
-      <span class="scroll-text">Scroll</span>
-      <div class="scroll-mouse">
-        <div class="scroll-wheel"></div>
-      </div>
-    </a>
   </header>
 
   <main>
-    <section class="section" id="about">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-number">01.</span> About Me</h2>
-        <div class="about-grid">
-          <div class="about-text stagger-item">
-            <p>
-              I'm a motivated Computer Science &amp; Information Technology student at
-              <strong>Chameli Devi Group of Institutions</strong>, currently in my 6th semester.
-              I'm passionate about software development and eager to apply my programming skills
-              in a professional environment.
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+
+        <!-- Main Hero Grid: Typography on Left, Editorial Image on Right -->
+        <div class="hero-grid-layout">
+
+          <div class="hero-text-col">
+            <p class="hero-greeting mono-meta reveal-item" style="--delay: 200ms;">
+              01 — PORTFOLIO INTRODUCTION
             </p>
-            <p>
-              Passionate Java Developer with a strong foundation in Object-Oriented Programming, Data Structures &
-              Algorithms, and SQL. I enjoy building scalable applications and continuously improving my problem-solving
-              skills. Currently expanding my expertise in Backend Development using JDBC, Servlets, JSP, and Spring
-              Boot.
+
+            <h1 class="hero-title reveal-item" style="--delay: 300ms;">
+              <span class="title-sub">HI, I'M</span>
+              <!-- Animated Interactive Name -->
+              <span class="title-main animated-name" id="heroAnimatedName" aria-label="Amit Kumar">
+                <span class="name-word"><span class="char">A</span><span class="char">M</span><span
+                    class="char">I</span><span class="char">T</span></span>
+                <span class="name-word"><span class="char">K</span><span class="char">U</span><span
+                    class="char">M</span><span class="char">A</span><span class="char">R</span></span>
+              </span>
+              <!-- Dynamic Role Switcher / Typewriter -->
+              <span class="title-role">
+                <span id="typewriterRole">SOFTWARE DEVELOPER</span><span class="type-cursor">|</span>
+              </span>
+            </h1>
+
+            <p class="hero-desc reveal-item" style="--delay: 450ms;">
+              Pursuing B.Tech in CS & IT with a strong foundation in Java, OOP, and Data Structures. Seeking a Java
+              Developer internship to build real-world solutions and grow as a developer
             </p>
-            <div class="code-snippet">
-              <div class="code-header">
-                <span class="code-dot red"></span>
-                <span class="code-dot yellow"></span>
-                <span class="code-dot green"></span>
-                <span class="code-filename">developer.java</span>
-              </div>
-              <pre><code><span class="code-keyword">class</span> <span class="code-class">Developer</span> {
-  <span class="code-keyword">String</span> name = <span class="code-string">"Amit Kumar"</span>;
-  <span class="code-keyword">String</span>[] skills = {<span class="code-string">"Java"</span>, <span class="code-string">"C++"</span>, <span class="code-string">"Python"</span>};
-  <span class="code-keyword">boolean</span> seekingInternship = <span class="code-bool">true</span>;
-}</code></pre>
-            </div>
-          </div>
-          <div class="about-highlights" data-stagger>
-            <div class="highlight-card tilt-card stagger-item" data-tilt>
-              <div class="highlight-glow"></div>
-              <span class="highlight-icon">🎓</span>
-              <div>
-                <h3>B.Tech CS &amp; IT</h3>
-                <p>6th Semester</p>
-              </div>
-            </div>
-            <div class="highlight-card tilt-card stagger-item" data-tilt>
-              <div class="highlight-glow"></div>
-              <span class="highlight-icon">💻</span>
-              <div>
-                <h3>Java &amp; C++</h3>
-                <p>Core Languages</p>
-              </div>
-            </div>
-            <div class="highlight-card tilt-card stagger-item" data-tilt>
-              <div class="highlight-glow"></div>
-              <span class="highlight-icon">🚀</span>
-              <div>
-                <h3>Internship Ready</h3>
-                <p>Seeking Opportunities</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section section-compact section-alt" id="education">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-number">02.</span> Education</h2>
-        <div class="education-grid" data-stagger>
-          <div class="edu-card edu-card-main stagger-item">
-            <span class="edu-year">Present</span>
-            <h3>B.Tech — Computer Science &amp; IT</h3>
-            <p>Chameli Devi Group of Institutions · 6th Semester</p>
-            <span class="edu-badge">In Progress</span>
-          </div>
-          <div class="edu-card stagger-item">
-            <span class="edu-year">2021</span>
-            <h3>Higher Secondary (12th)</h3>
-            <p>M.P. Board</p>
-            <span class="edu-score">89%</span>
-          </div>
-          <div class="edu-card stagger-item">
-            <span class="edu-year">2019</span>
-            <h3>Secondary (10th)</h3>
-            <p>M.P. Board</p>
-            <span class="edu-score">89%</span>
-          </div>
-        </div>
-      </div>
-    </section>
+            <div class="hero-cta-group reveal-item" style="--delay: 550ms;">
+              <a href="#projects" class="btn btn-primary magnetic-btn">
+                <span>VIEW PROJECTS</span>
+                <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <button class="btn btn-secondary magnetic-btn" id="btnHeroResumeModal">
+                <span>VIEW RESUME</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                  <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+              </button>
+            </div>
 
-    <section class="section section-compact" id="skills">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-number">03.</span> Skills</h2>
-        <div class="stack-path" data-stagger>
-          <div class="stack-path-line" id="stackPathLine"></div>
+            <!-- Hero Quick Social Access Icons -->
+            <div class="hero-social-icons reveal-item" style="--delay: 650ms;">
+              <a href="https://github.com/Amit7304" target="_blank" rel="noopener noreferrer"
+                class="hero-icon-btn github-btn" aria-label="GitHub Profile" title="GitHub / Amit7304">
+                <svg class="hero-social-svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                <span class="hero-icon-label">GitHub</span>
+              </a>
 
-          <div class="stack-node stagger-item">
-            <div class="stack-panel">
-              <span class="stack-level">01 · Languages</span>
-              <h3>Programming Languages</h3>
-              <div class="stack-icons">
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-                    alt="" /><span>Java</span></div>
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
-                    alt="" /><span>C++</span></div>
-              </div>
+              <a href="https://www.linkedin.com/in/amit-kumar-7304-" target="_blank" rel="noopener noreferrer"
+                class="hero-icon-btn linkedin-btn" aria-label="LinkedIn Profile" title="LinkedIn / amit-kumar-7304-">
+                <svg class="hero-social-svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                </svg>
+                <span class="hero-icon-label">LinkedIn</span>
+              </a>
+
+              <a href="mailto:akrathore7304@gmail.com" class="hero-icon-btn email-btn"
+                aria-label="Email Amit Kumar" title="Email / akrathore7304@gmail.com">
+                <svg class="hero-social-svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                </svg>
+                <span class="hero-icon-label">Email</span>
+              </a>
             </div>
           </div>
 
-          <div class="stack-node stagger-item">
-            <div class="stack-panel">
-              <span class="stack-level">02 · Concepts</span>
-              <h3>Core Java Concepts</h3>
-              <div class="stack-icons">
-                <div class="stack-icon-tile stack-text-tile"><span>OOP</span></div>
-                <div class="stack-icon-tile stack-text-tile"><span>Collections Framework</span></div>
-                <div class="stack-icon-tile stack-text-tile"><span>Exceptions Handling</span></div>
-              </div>
-            </div>
-          </div>
+          <!-- Hero 3D Profile Showcase with Multi-Layer Parallax -->
+          <div class="hero-image-col reveal-item" style="--delay: 400ms;">
+            <div class="profile-3d-wrapper" id="heroProfileStage">
 
-          <div class="stack-node stagger-item">
-            <div class="stack-panel">
-              <span class="stack-level">03 · Backend</span>
-              <h3>Backend Development</h3>
-              <div class="stack-icons">
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-                    alt="" /><span>JDBC</span></div>
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg"
-                    alt="" /><span>REST APIs</span></div>
-                <div class="stack-icon-tile stack-learning"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
-                    alt="" /><span>Spring Boot</span></div>
-              </div>
-            </div>
-          </div>
+              <!-- 3D Ambient Glowing Halos & Kinetic Rings -->
+              <div class="profile-glow-halo" aria-hidden="true"></div>
+              <div class="profile-kinetic-ring ring-outer" aria-hidden="true"></div>
+              <div class="profile-kinetic-ring ring-inner" aria-hidden="true"></div>
 
-          <div class="stack-node stagger-item">
-            <div class="stack-panel">
-              <span class="stack-level">04 · Database</span>
-              <h3>Database</h3>
-              <div class="stack-icons">
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
-                    alt="" /><span>SQL</span></div>
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg"
-                    alt="" /><span>MySQL</span></div>
-              </div>
-            </div>
-          </div>
+              <!-- Main 3D Card Platform -->
+              <div class="profile-3d-card" id="heroProfileCard">
 
-          <div class="stack-node stagger-item">
-            <div class="stack-panel">
-              <span class="stack-level">05 · Frontend</span>
-              <h3>Frontend</h3>
-              <div class="stack-icons">
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-                    alt="" /><span>HTML5</span></div>
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-                    alt="" /><span>CSS3</span></div>
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-                    alt="" /><span>JavaScript</span></div>
-              </div>
-            </div>
-          </div>
+                <!-- Circular / Rounded Holographic Portal Frame -->
+                <div class="profile-portal-frame">
+                  <div class="profile-avatar-window">
+                    <img src="assets/profile.png?v=2" alt="Amit Kumar — Software Developer" class="profile-3d-img"
+                      onerror="this.onerror=null; this.src='assets/profile-placeholder.svg';" />
 
-          <div class="stack-node stagger-item">
-            <div class="stack-panel">
-              <span class="stack-level">06 · Tools</span>
-              <h3>Tools &amp; Platforms</h3>
-              <div class="stack-icons">
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-                    alt="" /><span>Git</span></div>
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
-                    alt="" /><span>GitHub</span></div>
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
-                    alt="" /><span>VS Code</span></div>
-                <div class="stack-icon-tile"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg"
-                    alt="" /><span>IntelliJ</span></div>
-              </div>
-            </div>
-          </div>
+                    <!-- Dynamic Interactive Specular Glare -->
+                    <div class="profile-specular-glare" aria-hidden="true"></div>
 
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="projects">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-number">04.</span> Projects &amp; Training</h2>
-        <div class="projects-grid" data-stagger>
-          <article class="project-card tilt-card stagger-item" data-tilt>
-            <div class="project-glow"></div>
-            <div class="project-number">01</div>
-            <div class="project-img-wrap">
-              <img src="assets/projects/sprintly.png" alt="Sprintly — Kanban sprint board with drag-and-drop task management"
-                class="project-img" loading="lazy" />
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <div class="project-icon-wrap">
-                  <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="7" height="18" rx="1" />
-                    <rect x="14" y="3" width="7" height="12" rx="1" />
-                  </svg>
+                    <!-- Holographic Rim Light -->
+                    <div class="profile-hologram-rim" aria-hidden="true"></div>
+                  </div>
                 </div>
-                <span class="project-tech">Next.js · TypeScript · Supabase</span>
-              </div>
-              <h3>Sprintly — Kanban Sprint Board</h3>
-              <p>
-                Full-stack team task manager with drag-and-drop Kanban columns (Backlog, In Progress, Review, Done),
-                role-based permissions, WIP limits, real-time updates, dashboard analytics, notifications,
-                and a backend data-cleaning pipeline for imported tasks.
-              </p>
-              <div class="project-footer">
-                <span class="project-status">Full Stack</span>
-                <div class="project-links">
-                  <a href="https://github.com/Amit7304/Sprintly" target="_blank" rel="noopener noreferrer"
-                    class="project-link" aria-label="View Sprintly on GitHub">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.665-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+
+                <!-- Floating 3D Micro-Cards (High Elevation & Parallax) -->
+                <div class="float-card card-status">
+                  <span class="pulse-indicator"></span>
+                  <span class="float-text">Available for Roles</span>
+                </div>
+
+                <div class="float-card card-focus">
+                  <div class="card-icon-box">
+                    <i class="devicon-java-plain"></i>
+                  </div>
+                  <div class="card-text-group">
+                    <span class="card-micro-label">CORE FOCUS</span>
+                    <strong class="card-bold-label">Java &amp; DSA</strong>
+                  </div>
+                </div>
+
+                <div class="float-card card-education">
+                  <div class="card-icon-box">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                      stroke-width="2.2">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
                     </svg>
-                    GitHub
-                  </a>
-                  <a href="https://sprintly-nu.vercel.app" target="_blank" rel="noopener noreferrer"
-                    class="project-link">Live →</a>
+                  </div>
+                  <div class="card-text-group">
+                    <span class="card-micro-label">ACADEMICS</span>
+                    <strong class="card-bold-label">B.Tech CS &amp; IT</strong>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MARQUEE TICKER SECTION -->
+    <section class="marquee-section" aria-label="Technologies Marquee">
+      <div class="marquee-header mono-meta">
+        <span>TECHNOLOGIES &amp; SKILLS</span>
+        <span class="marquee-sub">CONTINUOUS LEARNING &amp; BUILDING</span>
+      </div>
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="marquee-content">
+          <span class="marquee-item"><i class="devicon-java-plain"></i> JAVA</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item">DATA STRUCTURES &amp; ALGORITHMS</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item"><i class="devicon-javascript-plain"></i> WEB DEVELOPMENT</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item"><i class="devicon-mysql-plain"></i> SQL &amp; MYSQL</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item">BACKEND ARCHITECTURE</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item"><i class="devicon-spring-plain"></i> SPRING BOOT</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item">OBJECT-ORIENTED PROGRAMMING</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item"><i class="devicon-git-plain"></i> GIT &amp; GITHUB</span>
+          <span class="marquee-sep">&amp;</span>
+        </div>
+        <!-- Duplicated for seamless infinite loop -->
+        <div class="marquee-content" aria-hidden="true">
+          <span class="marquee-item"><i class="devicon-java-plain"></i> JAVA</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item">DATA STRUCTURES &amp; ALGORITHMS</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item"><i class="devicon-javascript-plain"></i> WEB DEVELOPMENT</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item"><i class="devicon-mysql-plain"></i> SQL &amp; MYSQL</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item">BACKEND ARCHITECTURE</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item"><i class="devicon-spring-plain"></i> SPRING BOOT</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item">OBJECT-ORIENTED PROGRAMMING</span>
+          <span class="marquee-sep">&amp;</span>
+          <span class="marquee-item"><i class="devicon-git-plain"></i> GIT &amp; GITHUB</span>
+          <span class="marquee-sep">&amp;</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED WORK / PROJECTS SECTION -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+
+        <div class="section-header-row">
+          <div class="section-tag-group">
+            <span class="section-index-num mono-meta">02 // PORTFOLIO</span>
+            <h2 class="section-heading">SELECTED WORK</h2>
+          </div>
+          <p class="section-subtext">
+            Practical software projects built with focus on system architecture, database design, and real-world
+            utility.
+          </p>
+        </div>
+
+        <!-- Project Cards Grid with 3D Tilt Animations -->
+        <div class="projects-list-grid">
+
+          <!-- PROJECT 01: EMS (EMPLOYEE MANAGEMENT SYSTEM) -->
+          <article class="project-editorial-card tilt-card" data-project-id="ems">
+            <div class="card-shine-effect"></div>
+            <div class="project-card-header">
+              <span class="project-index mono-meta">01 / 04</span>
+              <span class="project-category mono-meta">BACKEND &amp; DATABASE</span>
+            </div>
+
+            <div class="project-preview-window">
+              <div class="window-mac-bar">
+                <span class="traffic-light red"></span>
+                <span class="traffic-light yellow"></span>
+                <span class="traffic-light green"></span>
+                <span class="window-tab-title">EmployeeDAO.java</span>
+              </div>
+              <div class="project-img-frame">
+                <img src="assets/projects/employee-management.svg"
+                  alt="Employee Management System — Java CRUD interface" class="project-img" loading="lazy" />
+                <div class="project-hover-overlay">
+                  <span class="overlay-btn">EXPLORE PROJECT WINDOW ↗</span>
                 </div>
               </div>
             </div>
-          </article>
-          <article class="project-card tilt-card stagger-item" data-tilt>
-            <div class="project-glow"></div>
-            <div class="project-number">02</div>
-            <div class="project-img-wrap">
-              <img src="assets/projects/fake-news-detection.svg" alt="Fake News Detection System — ML classifier interface"
-                class="project-img" loading="lazy" />
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <div class="project-icon-wrap">
-                  <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
-                    <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" />
-                  </svg>
-                </div>
-                <span class="project-tech">Python · ML</span>
+
+            <div class="project-content-block">
+              <div class="project-title-row">
+                <h3 class="project-name">EMS — EMPLOYEE MANAGEMENT SYSTEM</h3>
+                <span class="project-arrow-icon">→</span>
               </div>
-              <h3>Fake News Detection System</h3>
-              <p>
-                Built during a Python with Machine Learning training program. A system that classifies
-                news articles as real or fake using ML techniques.
+
+              <p class="project-description">
+                Full-featured Java CRUD application built on the DAO design pattern with JDBC and MySQL. Includes
+                console operations, HTTP endpoints, employee queries, and department analytics.
               </p>
-              <div class="project-footer">
-                <span class="project-status">Completed</span>
-                <span class="project-arrow">→</span>
+
+              <div class="project-tech-pills">
+                <span class="tech-pill animated-pill"><i class="devicon-java-plain colored"></i> Java</span>
+                <span class="tech-pill animated-pill"><i class="devicon-mysql-plain colored"></i> JDBC &amp;
+                  MySQL</span>
+                <span class="tech-pill animated-pill">DAO Pattern</span>
               </div>
-            </div>
-          </article>
-          <article class="project-card tilt-card stagger-item" data-tilt>
-            <div class="project-glow"></div>
-            <div class="project-number">03</div>
-            <div class="project-img-wrap">
-              <img src="assets/projects/employee-management.svg"
-                alt="Employee Management System — employee table and dashboard"
-                class="project-img" loading="lazy" />
-            </div>
-            <div class="project-body">
-              <div class="project-header">
-                <div class="project-icon-wrap">
-                  <svg class="project-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
-                  </svg>
-                </div>
-                <span class="project-tech">Java · JDBC · MySQL</span>
-              </div>
-              <h3>Employee Management System</h3>
-              <p>
-                Java CRUD application using the DAO design pattern with JDBC and MySQL. Includes a console app
-                and a web UI with employee search, add/edit/delete, and dashboard stats for headcount,
-                departments, and average salary — served via a Java HTTP API server.
-              </p>
-              <div class="project-footer">
-                <span class="project-status">Full Stack</span>
-                <div class="project-links">
+
+              <div class="project-action-bar">
+                <button class="project-modal-trigger btn-text" data-project="ems">
+                  View Case &amp; Architecture →
+                </button>
+                <div class="project-ext-links">
                   <a href="https://github.com/Amit7304/EmployeeManagementSystem" target="_blank"
-                    rel="noopener noreferrer" class="project-link" aria-label="View Employee Management System on GitHub">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path
-                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.665-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                    </svg>
-                    GitHub
+                    rel="noopener noreferrer" class="icon-link" aria-label="GitHub Repository">
+                    CODE ↗
                   </a>
                 </div>
               </div>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="certifications">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-number">05.</span> Certifications</h2>
-        <div class="cert-grid" data-stagger>
-          <div class="cert-card tilt-card stagger-item" data-tilt>
-            <div class="cert-shine"></div>
-            <div class="cert-badge">NPTEL</div>
-            <h3>Programming in Java</h3>
-            <p>Certified course from NPTEL covering core Java programming concepts.</p>
-            <div class="cert-icon">☕</div>
-          </div>
-          <div class="cert-card tilt-card stagger-item" data-tilt>
-            <div class="cert-shine"></div>
-            <div class="cert-badge">ML</div>
-            <h3>Python with Machine Learning</h3>
-            <p>Internship program certification in Python and machine learning fundamentals.</p>
-            <div class="cert-icon">🤖</div>
-          </div>
-          <div class="cert-card tilt-card stagger-item" data-tilt>
-            <div class="cert-shine"></div>
-            <div class="cert-badge">Java</div>
-            <h3>CRT — Core Java Programming</h3>
-            <p>Certificate in Core Java programming from CRT training program.</p>
-            <div class="cert-icon">📜</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-alt" id="activities">
-      <div class="container">
-        <h2 class="section-title reveal"><span class="section-number">06.</span> Extracurricular</h2>
-        <div class="activities-list" data-stagger>
-          <div class="activity-item tilt-card stagger-item" data-tilt>
-            <div class="activity-icon-wrap">🏆</div>
-            <div>
-              <h3>Hackathon Participant</h3>
-              <p>Competed in hackathons, collaborating under pressure to build innovative solutions.</p>
+          <!-- PROJECT 02: FAKE NEWS DETECTION -->
+          <article class="project-editorial-card tilt-card" data-project-id="fake-news">
+            <div class="card-shine-effect"></div>
+            <div class="project-card-header">
+              <span class="project-index mono-meta">02 / 04</span>
+              <span class="project-category mono-meta">MACHINE LEARNING</span>
             </div>
-            <div class="activity-tag">Competitive</div>
-          </div>
-          <div class="activity-item tilt-card stagger-item" data-tilt>
-            <div class="activity-icon-wrap">🤝</div>
-            <div>
-              <h3>Event Volunteering</h3>
-              <p>Volunteered at software events, seminars, and technical gatherings on campus.</p>
+
+            <div class="project-preview-window">
+              <div class="window-mac-bar">
+                <span class="traffic-light red"></span>
+                <span class="traffic-light yellow"></span>
+                <span class="traffic-light green"></span>
+                <span class="window-tab-title">nlp-classifier.py</span>
+              </div>
+              <div class="project-img-frame">
+                <img src="assets/projects/fake-news-detection.svg"
+                  alt="Fake News Detection System — ML classifier interface" class="project-img" loading="lazy" />
+                <div class="project-hover-overlay">
+                  <span class="overlay-btn">EXPLORE PROJECT WINDOW ↗</span>
+                </div>
+              </div>
             </div>
-            <div class="activity-tag">Community</div>
+
+            <div class="project-content-block">
+              <div class="project-title-row">
+                <h3 class="project-name">FAKE NEWS DETECTION</h3>
+                <span class="project-arrow-icon">→</span>
+              </div>
+
+              <p class="project-description">
+                A machine learning application for classifying news content using natural language processing (NLP)
+                pipelines and text classification models.
+              </p>
+
+              <div class="project-tech-pills">
+                <span class="tech-pill animated-pill"><i class="devicon-python-plain colored"></i> Python</span>
+                <span class="tech-pill animated-pill"><i class="devicon-streamlit-plain colored"></i> Streamlit</span>
+                <span class="tech-pill animated-pill"><i class="devicon-scikitlearn-plain colored"></i> Machine
+                  Learning</span>
+                <span class="tech-pill animated-pill">NLP</span>
+              </div>
+
+              <div class="project-action-bar">
+                <button class="project-modal-trigger btn-text" data-project="fake-news">
+                  View Case &amp; Architecture →
+                </button>
+                <div class="project-ext-links">
+                  <a href="https://github.com/Amit7304" target="_blank" rel="noopener noreferrer" class="icon-link"
+                    aria-label="GitHub Repository">
+                    CODE ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 03: WEATHER APPLICATION -->
+          <article class="project-editorial-card tilt-card" data-project-id="weather-app">
+            <div class="card-shine-effect"></div>
+            <div class="project-card-header">
+              <span class="project-index mono-meta">03 / 04</span>
+              <span class="project-category mono-meta">WEB APPLICATION</span>
+            </div>
+
+            <div class="project-preview-window">
+              <div class="window-mac-bar">
+                <span class="traffic-light red"></span>
+                <span class="traffic-light yellow"></span>
+                <span class="traffic-light green"></span>
+                <span class="window-tab-title">atmos-radar.web</span>
+              </div>
+              <div class="project-img-frame">
+                <img src="assets/projects/weather-app.svg"
+                  alt="Weather Application — Real-time weather radar & forecast" class="project-img" loading="lazy" />
+                <div class="project-hover-overlay">
+                  <span class="overlay-btn">EXPLORE PROJECT WINDOW ↗</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content-block">
+              <div class="project-title-row">
+                <h3 class="project-name">WEATHER APPLICATION</h3>
+                <span class="project-arrow-icon">→</span>
+              </div>
+
+              <p class="project-description">
+                A responsive weather web application providing current atmospheric metrics, 24-hour temperature curves,
+                and multi-day meteorological forecasts via REST APIs.
+              </p>
+
+              <div class="project-tech-pills">
+                <span class="tech-pill animated-pill"><i class="devicon-html5-plain colored"></i> HTML</span>
+                <span class="tech-pill animated-pill"><i class="devicon-css3-plain colored"></i> CSS</span>
+                <span class="tech-pill animated-pill"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                <span class="tech-pill animated-pill">Weather API</span>
+              </div>
+
+              <div class="project-action-bar">
+                <button class="project-modal-trigger btn-text" data-project="weather-app">
+                  View Case &amp; Architecture →
+                </button>
+                <div class="project-ext-links">
+                  <a href="https://github.com/Amit7304" target="_blank" rel="noopener noreferrer" class="icon-link"
+                    aria-label="GitHub Repository">
+                    CODE ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 04: STATE ARENA -->
+          <article class="project-editorial-card tilt-card" data-project-id="state-arena">
+            <div class="card-shine-effect"></div>
+            <div class="project-card-header">
+              <span class="project-index mono-meta">04 / 04</span>
+              <span class="project-category mono-meta">ESPORTS PLATFORM</span>
+            </div>
+
+            <div class="project-preview-window">
+              <div class="window-mac-bar">
+                <span class="traffic-light red"></span>
+                <span class="traffic-light yellow"></span>
+                <span class="traffic-light green"></span>
+                <span class="window-tab-title">state-arena.app</span>
+              </div>
+              <div class="project-img-frame">
+                <img src="assets/projects/state-arena.svg"
+                  alt="State Arena — Esports tournament and statistics platform" class="project-img" loading="lazy" />
+                <div class="project-hover-overlay">
+                  <span class="overlay-btn">EXPLORE PROJECT WINDOW ↗</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content-block">
+              <div class="project-title-row">
+                <h3 class="project-name">STATE ARENA</h3>
+                <span class="project-arrow-icon">→</span>
+              </div>
+
+              <p class="project-description">
+                A platform for displaying esports matches, teams, players, tournaments, and real-time tournament
+                statistics with SQL relational querying.
+              </p>
+
+              <div class="project-tech-pills">
+                <span class="tech-pill animated-pill"><i class="devicon-html5-plain colored"></i> HTML</span>
+                <span class="tech-pill animated-pill"><i class="devicon-css3-plain colored"></i> CSS</span>
+                <span class="tech-pill animated-pill"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                <span class="tech-pill animated-pill"><i class="devicon-postgresql-plain colored"></i> SQL</span>
+              </div>
+
+              <div class="project-action-bar">
+                <button class="project-modal-trigger btn-text" data-project="state-arena">
+                  View Case &amp; Architecture →
+                </button>
+                <div class="project-ext-links">
+                  <a href="https://github.com/Amit7304" target="_blank" rel="noopener noreferrer" class="icon-link"
+                    aria-label="GitHub Repository">
+                    CODE ↗
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS SECTION -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+
+        <div class="section-header-row">
+          <div class="section-tag-group">
+            <span class="section-index-num mono-meta">03 // TECHNICAL STACK</span>
+            <h2 class="section-heading">SKILLS &amp; PROFICIENCIES</h2>
+          </div>
+          <p class="section-subtext">
+            Categorized technical capabilities and engineering tooling with focus on core foundations and hands-on
+            implementation.
+          </p>
+        </div>
+
+        <div class="skills-grid-layout">
+
+          <!-- Skill Group 1: LANGUAGES -->
+          <div class="skill-category-card tilt-card">
+            <div class="card-shine-effect"></div>
+            <div class="skill-card-top">
+              <span class="cat-num mono-meta">GROUP 01</span>
+              <h3 class="cat-title">LANGUAGES</h3>
+            </div>
+            <ul class="skill-items-list">
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-java-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">Java</span>
+                    <span class="skill-badge mono-meta">Core &amp; OOP</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Collections · Multithreading · Exceptions</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 90%;"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-javascript-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">JavaScript</span>
+                    <span class="skill-badge mono-meta">ES6+</span>
+                  </div>
+                  <span class="skill-detail mono-meta">DOM Manipulation · Async / Await · Fetch</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 82%;"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-mysql-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">SQL</span>
+                    <span class="skill-badge mono-meta">Relational</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Relational Queries · Joins · Schema Design</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 85%;"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-cplusplus-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">C++</span>
+                    <span class="skill-badge mono-meta">Logic</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Syntax Foundations &amp; Algorithmic Logic</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 75%;"></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Skill Group 2: WEB & FRONTEND -->
+          <div class="skill-category-card tilt-card">
+            <div class="card-shine-effect"></div>
+            <div class="skill-card-top">
+              <span class="cat-num mono-meta">GROUP 02</span>
+              <h3 class="cat-title">WEB DEVELOPMENT</h3>
+            </div>
+            <ul class="skill-items-list">
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-html5-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">HTML5</span>
+                    <span class="skill-badge mono-meta">Semantic</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Semantic Markup · Accessibility · SEO</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 92%;"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-css3-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">CSS3</span>
+                    <span class="skill-badge mono-meta">Layouts</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Flexbox · Grid · Micro-Animations · Responsive</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 88%;"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-postman-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">REST APIs</span>
+                    <span class="skill-badge mono-meta">Integration</span>
+                  </div>
+                  <span class="skill-detail mono-meta">HTTP Protocols · JSON Endpoints · Async UI</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 84%;"></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Skill Group 3: CORE COMPUTER SCIENCE -->
+          <div class="skill-category-card tilt-card">
+            <div class="card-shine-effect"></div>
+            <div class="skill-card-top">
+              <span class="cat-num mono-meta">GROUP 03</span>
+              <h3 class="cat-title">CORE CS</h3>
+            </div>
+            <ul class="skill-items-list">
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><span class="custom-icon">⚡</span></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">Data Structures &amp; Algorithms</span>
+                    <span class="skill-badge mono-meta">Core</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Complexity Analysis · Problem Solving in Java</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 86%;"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><span class="custom-icon">🧩</span></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">OOP Principles</span>
+                    <span class="skill-badge mono-meta">Design</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Encapsulation · Inheritance · Polymorphism · Abstraction</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 90%;"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><span class="custom-icon">🗄️</span></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">DBMS &amp; SQL</span>
+                    <span class="skill-badge mono-meta">Database</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Normalization · ACID Properties · Indexing</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 84%;"></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Skill Group 4: TOOLS & PLATFORMS -->
+          <div class="skill-category-card tilt-card">
+            <div class="card-shine-effect"></div>
+            <div class="skill-card-top">
+              <span class="cat-num mono-meta">GROUP 04</span>
+              <h3 class="cat-title">TOOLS &amp; PLATFORMS</h3>
+            </div>
+            <ul class="skill-items-list">
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-git-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">Git &amp; GitHub</span>
+                    <span class="skill-badge mono-meta">VCS</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Version Control · Branching · Collaboration</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 88%;"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-vscode-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">VS Code &amp; IntelliJ</span>
+                    <span class="skill-badge mono-meta">IDEs</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Development Environment · Debugging</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 90%;"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-mysql-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">MySQL Workbench</span>
+                    <span class="skill-badge mono-meta">Workbench</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Database Management &amp; Query Execution</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 82%;"></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Skill Group 5: CONTINUOUS LEARNING -->
+          <div class="skill-category-card skill-card-highlight tilt-card">
+            <div class="card-shine-effect"></div>
+            <div class="skill-card-top">
+              <span class="cat-num mono-meta">GROUP 05</span>
+              <h3 class="cat-title">EXPANDING &amp; LEARNING</h3>
+            </div>
+            <ul class="skill-items-list">
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><i class="devicon-spring-plain colored"></i></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">Spring Boot</span>
+                    <span class="skill-badge mono-meta">Framework</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Dependency Injection · REST Controllers · JPA / Hibernate</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 65%;"></div>
+                  </div>
+                </div>
+              </li>
+              <li class="skill-item animated-skill">
+                <div class="skill-icon-wrap"><span class="custom-icon">🏗️</span></div>
+                <div class="skill-info">
+                  <div class="skill-header-line">
+                    <span class="skill-name">Backend Architecture</span>
+                    <span class="skill-badge mono-meta">Architecture</span>
+                  </div>
+                  <span class="skill-detail mono-meta">Scalable Services · Layered Architecture · MVC</span>
+                  <div class="skill-track-bar">
+                    <div class="skill-fill-bar" style="--level: 70%;"></div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS SECTION -->
+    <section class="section education-section" id="education">
+      <div class="container">
+
+        <div class="section-header-row">
+          <div class="section-tag-group">
+            <span class="section-index-num mono-meta">04 // ACADEMICS &amp; CREDENTIALS</span>
+            <h2 class="section-heading">EDUCATION &amp; CERTIFICATIONS</h2>
+          </div>
+          <p class="section-subtext">
+            Formal computer science curriculum milestones, academic coursework, and industry-recognized certifications.
+          </p>
+        </div>
+
+        <div class="education-layout-grid">
+
+          <!-- Left: Academic Degree Card -->
+          <div class="academic-degree-col">
+            <div class="degree-editorial-card tilt-card">
+              <div class="card-shine-effect"></div>
+
+              <div class="degree-card-top">
+                <div class="degree-status-pill">
+                  <span class="status-dot-active"></span>
+                  <span class="mono-meta">ACTIVE STUDENT · 7TH SEM</span>
+                </div>
+                <span class="degree-period mono-meta">2023 — 2027</span>
+              </div>
+
+              <div class="degree-body">
+                <div class="degree-badge-icon">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                    <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                  </svg>
+                </div>
+                <h3 class="degree-title">Bachelor of Technology</h3>
+                <h4 class="degree-field">Computer Science &amp; Information Technology</h4>
+                <p class="degree-institution">
+                  <strong>Chameli Devi Group of Institutions</strong>, Indore
+                </p>
+
+                <div class="degree-divider"></div>
+
+                <div class="degree-coursework">
+                  <span class="mono-meta coursework-label">CORE COMPUTER SCIENCE COURSEWORK</span>
+                  <div class="coursework-tags">
+                    <span class="c-tag">Data Structures &amp; Algorithms</span>
+                    <span class="c-tag">Object-Oriented Programming (Java)</span>
+                    <span class="c-tag">Database Management (DBMS &amp; SQL)</span>
+                    <span class="c-tag">Operating Systems</span>
+                    <span class="c-tag">Computer Networks</span>
+                    <span class="c-tag">Software Engineering</span>
+                  </div>
+                </div>
+
+                <div class="degree-highlights">
+                  <div class="deg-stat">
+                    <span class="deg-stat-label mono-meta">PROGRAM</span>
+                    <span class="deg-stat-val">B.Tech CS &amp; IT</span>
+                  </div>
+                  <div class="deg-stat">
+                    <span class="deg-stat-label mono-meta">CURRENT SEM</span>
+                    <span class="deg-stat-val">7th Semester</span>
+                  </div>
+                  <div class="deg-stat">
+                    <span class="deg-stat-label mono-meta">CORE FOCUS</span>
+                    <span class="deg-stat-val">Java &amp; Backend</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Certifications & Credentials Grid -->
+          <div class="certifications-col">
+            <div class="certs-header-bar">
+              <span class="mono-meta">PROFESSIONAL CERTIFICATIONS &amp; ASSESSMENTS</span>
+              <span class="cert-count-pill mono-meta">4 CREDENTIALS</span>
+            </div>
+
+            <div class="certs-list-grid">
+
+              <!-- Cert 1: NPTEL Java -->
+              <div class="cert-item-card tilt-card">
+                <div class="cert-top-row">
+                  <span class="cert-issuer-tag mono-meta">NPTEL · IIT KHARAGPUR</span>
+                  <span class="cert-verified-badge">VERIFIED ✓</span>
+                </div>
+                <div class="cert-title-row">
+                  <div class="cert-icon-wrap java-theme">
+                    <i class="devicon-java-plain"></i>
+                  </div>
+                  <div>
+                    <h4 class="cert-name">Programming in Java</h4>
+                    <p class="cert-desc">Certified in Object-Oriented Architecture, Collections Framework,
+                      Multithreading, and Exception Handling.</p>
+                  </div>
+                </div>
+                <div class="cert-skills-pills">
+                  <span class="mini-pill">OOP</span>
+                  <span class="mini-pill">Collections</span>
+                  <span class="mini-pill">Exception Handling</span>
+                  <span class="mini-pill">Java 17</span>
+                </div>
+              </div>
+
+              <!-- Cert 2: Python ML -->
+              <div class="cert-item-card tilt-card">
+                <div class="cert-top-row">
+                  <span class="cert-issuer-tag mono-meta">SPECIALIZED TRAINING</span>
+                  <span class="cert-verified-badge">COMPLETED ✓</span>
+                </div>
+                <div class="cert-title-row">
+                  <div class="cert-icon-wrap python-theme">
+                    <i class="devicon-python-plain"></i>
+                  </div>
+                  <div>
+                    <h4 class="cert-name">Python with Machine Learning</h4>
+                    <p class="cert-desc">Training program in Supervised/Unsupervised Learning, Regression,
+                      Classification models, and NLP text processing.</p>
+                  </div>
+                </div>
+                <div class="cert-skills-pills">
+                  <span class="mini-pill">Python</span>
+                  <span class="mini-pill">Scikit-Learn</span>
+                  <span class="mini-pill">NLP</span>
+                  <span class="mini-pill">ML Classifiers</span>
+                </div>
+              </div>
+
+              <!-- Cert 3: Core Java CRT -->
+              <div class="cert-item-card tilt-card">
+                <div class="cert-top-row">
+                  <span class="cert-issuer-tag mono-meta">CAMPUS RECRUITMENT TRAINING</span>
+                  <span class="cert-verified-badge">ASSESSED ✓</span>
+                </div>
+                <div class="cert-title-row">
+                  <div class="cert-icon-wrap crt-theme">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                      <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="cert-name">Core Java Programming &amp; DSA</h4>
+                    <p class="cert-desc">Rigorous programming assessment focusing on Java syntax, memory management,
+                      problem-solving, and time optimization.</p>
+                  </div>
+                </div>
+                <div class="cert-skills-pills">
+                  <span class="mini-pill">Core Java</span>
+                  <span class="mini-pill">DSA Reasoning</span>
+                  <span class="mini-pill">Time Complexity</span>
+                </div>
+              </div>
+
+              <!-- Cert 4: Web & Backend Systems -->
+              <div class="cert-item-card tilt-card">
+                <div class="cert-top-row">
+                  <span class="cert-issuer-tag mono-meta">TECHNICAL SPECIALIZATION</span>
+                  <span class="cert-verified-badge">PROJECT-PROVEN ✓</span>
+                </div>
+                <div class="cert-title-row">
+                  <div class="cert-icon-wrap web-theme">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                      <line x1="8" y1="21" x2="16" y2="21"></line>
+                      <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="cert-name">Full-Stack Web &amp; Database Design</h4>
+                    <p class="cert-desc">Applied project track covering responsive UI, JDBC database connection
+                      patterns, SQL queries, and REST APIs.</p>
+                  </div>
+                </div>
+                <div class="cert-skills-pills">
+                  <span class="mini-pill">HTML / CSS / JS</span>
+                  <span class="mini-pill">JDBC</span>
+                  <span class="mini-pill">MySQL</span>
+                  <span class="mini-pill">REST APIs</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section about-section" id="about">
+      <div class="container">
+
+        <div class="section-header-row">
+          <div class="section-tag-group">
+            <span class="section-index-num mono-meta">05 // PROFILE &amp; PHILOSOPHY</span>
+            <h2 class="section-heading">ABOUT ME</h2>
+          </div>
+        </div>
+
+        <div class="about-grid-layout">
+
+          <div class="about-narrative-col">
+            <p class="about-lead-statement">
+              I am a software developer and computer science student dedicated to building scalable backend systems,
+              clean architectures, and responsive web applications.
+            </p>
+            <p class="about-body-text">
+              My technical foundation centers around Java, Object-Oriented Programming, Data Structures &amp; Algorithms,
+              and SQL relational databases. I approach software engineering with a focus on code readability, algorithmic
+              efficiency, and disciplined problem solving.
+            </p>
+            <p class="about-body-text">
+              Whether architecting database schemas with MySQL &amp; JDBC or building full-stack web applications, I
+              enjoy understanding how systems work under the hood and crafting solutions that are robust and easy to
+              maintain.
+            </p>
+          </div>
+
+          <!-- Developer.java macOS Code Card -->
+          <div class="about-timeline-col">
+            <div class="developer-code-card">
+              <div class="code-card-header">
+                <div class="mac-controls" aria-hidden="true">
+                  <span class="mac-dot dot-red"></span>
+                  <span class="mac-dot dot-yellow"></span>
+                  <span class="mac-dot dot-green"></span>
+                </div>
+                <span class="code-file-name">developer.java</span>
+              </div>
+              <div class="code-card-body">
+                <pre class="code-pre"><code><span class="tok-kw">class</span> <span class="tok-class">Developer</span> {
+  <span class="tok-type">String</span> <span class="tok-var">name</span> = <span class="tok-str">"Amit Kumar"</span>;
+  <span class="tok-type">String</span>[] <span class="tok-var">skills</span> = {<span class="tok-str">"Java"</span>, <span class="tok-str">"DSA"</span>, <span class="tok-str">"SQL"</span>};
+  <span class="tok-type">boolean</span> <span class="tok-var">seekingInternship</span> = <span class="tok-bool">true</span>;
+}</code></pre>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 4 Stat Boxes in a Single Row -->
+        <div class="about-stats-grid">
+          <div class="stat-card">
+            <span class="stat-label mono-meta">LOCATION</span>
+            <span class="stat-val">India</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label mono-meta">PRIMARY DOMAIN</span>
+            <span class="stat-val">Software Development</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label mono-meta">CORE STACK</span>
+            <span class="stat-val">Java · SQL · Web Dev</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label mono-meta">AVAILABILITY</span>
+            <span class="stat-val">Open for Opportunities</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RESUME / CTA SECTION -->
+    <section class="section resume-section" id="resume">
+      <div class="container">
+        <div class="resume-cta-card">
+          <div class="card-crosshair ch-tl">+</div>
+          <div class="card-crosshair ch-tr">+</div>
+          <div class="card-crosshair ch-bl">+</div>
+          <div class="card-crosshair ch-br">+</div>
+
+          <div class="resume-cta-inner">
+            <span class="mono-meta section-index-num">06 // CAREER INQUIRIES</span>
+            <h2 class="resume-cta-heading">LET'S BUILD SOMETHING.</h2>
+            <p class="resume-cta-desc">
+              Interested in software development opportunities, internships and challenging technical projects.
+            </p>
+
+            <div class="resume-actions-group">
+              <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary magnetic-btn"
+                download>
+                <span>DOWNLOAD RESUME</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+              </a>
+              <button class="btn btn-secondary magnetic-btn" id="btnOpenResumeModal">
+                <span>VIEW RESUME PREVIEW</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section class="section contact-section" id="contact">
       <div class="container">
-        <h2 class="section-title reveal"><span class="section-number">07.</span> Get In Touch</h2>
-        <p class="contact-intro reveal">
-          I'm currently open to Java Developer internship opportunities.
-          Whether you have a question or just want to say hi, feel free to reach out!
-        </p>
-        <div class="contact-cards" data-stagger>
-          <a href="mailto:akrathore7304@gmail.com" class="contact-card tilt-card stagger-item" data-tilt>
-            <div class="contact-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-              </svg>
-            </div>
-            <div>
-              <span class="contact-label">Email</span>
-              <span class="contact-value">akrathore7304@gmail.com</span>
-            </div>
-          </a>
-          <a href="tel:+917582088819" class="contact-card tilt-card stagger-item" data-tilt>
-            <div class="contact-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-              </svg>
-            </div>
-            <div>
-              <span class="contact-label">Phone</span>
-              <span class="contact-value">+91 75820 88819</span>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/amit-kumar-7304-" target="_blank" rel="noopener noreferrer"
-            class="contact-card tilt-card stagger-item" data-tilt>
-            <div class="contact-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </div>
-            <div>
-              <span class="contact-label">LinkedIn</span>
-              <span class="contact-value">amit-kumar-7304</span>
-            </div>
-          </a>
-          <a href="https://github.com/Amit7304" target="_blank" rel="noopener noreferrer"
-            class="contact-card tilt-card stagger-item" data-tilt>
-            <div class="contact-icon-wrap">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.665-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-              </svg>
-            </div>
-            <div>
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">Amit7304</span>
-            </div>
-          </a>
+
+        <div class="section-header-row">
+          <div class="section-tag-group">
+            <span class="section-index-num mono-meta">07 // DIRECT DISPATCH</span>
+            <h2 class="section-heading">LET'S CONNECT.</h2>
+          </div>
+          <p class="section-subtext">
+            Reach out directly for software engineering positions, internships, collaboration, or technical inquiries.
+          </p>
         </div>
-        <a href="mailto:akrathore7304@gmail.com" class="btn btn-primary btn-large magnetic reveal" data-strength="0.2">
-          <span>Say Hello</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
-          </svg>
-        </a>
+
+        <div class="contact-grid-layout">
+
+          <div class="contact-channels-col">
+
+            <a href="mailto:akrathore7304@gmail.com" class="contact-card-link tilt-card">
+              <div class="card-shine-effect"></div>
+              <div class="contact-card-top">
+                <span class="contact-channel-type mono-meta">EMAIL INQUIRY</span>
+                <span class="contact-link-arrow">↗</span>
+              </div>
+              <div class="contact-channel-value">akrathore7304@gmail.com</div>
+              <span class="contact-channel-hint mono-meta">Click to compose email</span>
+            </a>
+
+            <a href="https://github.com/Amit7304" target="_blank" rel="noopener noreferrer"
+              class="contact-card-link tilt-card">
+              <div class="card-shine-effect"></div>
+              <div class="contact-card-top">
+                <span class="contact-channel-type mono-meta">SOURCE REPOSITORIES</span>
+                <span class="contact-link-arrow">↗</span>
+              </div>
+              <div class="contact-channel-value">github.com/Amit7304</div>
+              <span class="contact-channel-hint mono-meta">Browse code and repositories</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/amit-kumar-7304-" target="_blank" rel="noopener noreferrer"
+              class="contact-card-link tilt-card">
+              <div class="card-shine-effect"></div>
+              <div class="contact-card-top">
+                <span class="contact-channel-type mono-meta">PROFESSIONAL NETWORK</span>
+                <span class="contact-link-arrow">↗</span>
+              </div>
+              <div class="contact-channel-value">linkedin.com/in/amit-kumar-7304-</div>
+              <span class="contact-channel-hint mono-meta">Connect on LinkedIn</span>
+            </a>
+
+            <div class="contact-card-link contact-card-static">
+              <div class="contact-card-top">
+                <span class="contact-channel-type mono-meta">DIRECT PHONE</span>
+                <span class="contact-location-dot">● INDIA</span>
+              </div>
+              <div class="contact-channel-value">+91 75820 88819</div>
+              <span class="contact-channel-hint mono-meta">Available for interview calls</span>
+            </div>
+
+          </div>
+
+          <!-- Quick Dispatch Message Window -->
+          <div class="contact-form-col">
+            <div class="macos-code-window contact-window">
+              <div class="window-mac-bar">
+                <div class="window-controls">
+                  <span class="traffic-light red"></span>
+                  <span class="traffic-light yellow"></span>
+                  <span class="traffic-light green"></span>
+                </div>
+                <span class="window-tab-title">quick-dispatch.sh</span>
+                <span class="window-lang-badge mono-meta">SEND MESSAGE</span>
+              </div>
+
+              <form class="contact-form-body" id="contactForm">
+                <div class="form-group">
+                  <label for="senderName" class="form-label mono-meta">NAME / ORGANIZATION</label>
+                  <input type="text" id="senderName" name="name" class="form-input" placeholder="e.g. Recruiters / Team"
+                    required />
+                </div>
+
+                <div class="form-group">
+                  <label for="senderEmail" class="form-label mono-meta">EMAIL ADDRESS</label>
+                  <input type="email" id="senderEmail" name="email" class="form-input"
+                    placeholder="your.email@company.com" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="senderMessage" class="form-label mono-meta">MESSAGE CONTENT</label>
+                  <textarea id="senderMessage" name="message" class="form-textarea" rows="4"
+                    placeholder="Hello Amit, we are interested in discussing..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full magnetic-btn">
+                  <span>DISPATCH MESSAGE</span>
+                  <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                  </svg>
+                </button>
+                <div class="form-feedback mono-meta" id="formFeedback"></div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>Designed &amp; built by <strong>Amit Kumar</strong></p>
-      <p class="footer-year">&copy; 2026</p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="footer-brand">AMIT KUMAR</span>
+        <span class="footer-role mono-meta">SOFTWARE DEVELOPER</span>
+      </div>
+
+      <div class="footer-center mono-meta">
+        <span>© 2026 AMIT KUMAR · DESIGN &amp; CODE BY AMIT</span>
+      </div>
+
+      <div class="footer-right">
+        <button class="back-to-top-btn" id="btnBackToTop" aria-label="Back to top">
+          <span class="mono-meta">BACK TO TOP</span>
+          <span class="arrow-up">↑</span>
+        </button>
+      </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- ============================================== -->
+  <!-- MACOS INSPIRED INTERACTIVE MODALS -->
+  <!-- ============================================== -->
+
+  <!-- Project Inspection Modal -->
+  <div class="modal-backdrop" id="projectModal" aria-hidden="true" role="dialog" aria-labelledby="modalProjectTitle">
+    <div class="modal-overlay" id="projectModalOverlay"></div>
+    <div class="macos-modal-window" role="document">
+
+      <div class="macos-modal-header">
+        <div class="modal-traffic-lights">
+          <button class="modal-dot red" id="btnCloseProjectModal" aria-label="Close modal"></button>
+          <span class="modal-dot yellow"></span>
+          <span class="modal-dot green"></span>
+        </div>
+        <div class="modal-window-title" id="modalProjectTitle">STATE ARENA — CASE SPECIFICATION</div>
+        <div class="modal-actions-right">
+          <span class="modal-kbd-hint mono-meta">ESC TO CLOSE</span>
+        </div>
+      </div>
+
+      <div class="macos-modal-body">
+        <div class="modal-image-strip">
+          <img src="assets/projects/state-arena.svg" alt="Project Screenshot Preview" id="modalProjectImg"
+            class="modal-preview-img" />
+        </div>
+
+        <div class="modal-detail-content">
+          <div class="modal-category-badge mono-meta" id="modalProjectCategory">ESPORTS TOURNAMENT &amp; STATS PLATFORM
+          </div>
+          <h3 class="modal-heading" id="modalProjectHeading">State Arena</h3>
+          <p class="modal-summary" id="modalProjectDesc">
+            A comprehensive web platform for displaying esports matches, teams, players, tournaments, and related
+            statistics with high-performance SQL querying.
+          </p>
+
+          <div class="modal-section-block">
+            <h4 class="modal-subheading mono-meta">ARCHITECTURE &amp; KEY HIGHLIGHTS</h4>
+            <ul class="modal-highlights-list" id="modalProjectHighlights">
+              <li>Relational data model structuring tournament brackets, team rosters, and historical stats.</li>
+              <li>Responsive user interface with optimized query load speeds and clean navigation.</li>
+              <li>Modular JavaScript frontend for live leaderboard rendering.</li>
+            </ul>
+          </div>
+
+          <div class="modal-section-block">
+            <h4 class="modal-subheading mono-meta">TECHNOLOGY SPECIFICATION</h4>
+            <div class="modal-tech-tags" id="modalProjectTechTags">
+              <span class="tech-pill">HTML</span>
+              <span class="tech-pill">CSS</span>
+              <span class="tech-pill">JavaScript</span>
+              <span class="tech-pill">SQL</span>
+            </div>
+          </div>
+
+          <div class="modal-footer-cta">
+            <a href="https://github.com/Amit7304" target="_blank" rel="noopener noreferrer" id="modalProjectGithub"
+              class="btn btn-primary">
+              <span>VIEW SOURCE CODE</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.395-.135-.345-.72-1.395-1.23-1.665-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </a>
+            <a href="#contact" id="modalProjectContact" class="btn btn-secondary">
+              <span>DISCUSS THIS PROJECT</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Resume Preview Modal -->
+  <div class="modal-backdrop" id="resumeModal" aria-hidden="true" role="dialog" aria-labelledby="modalResumeTitle">
+    <div class="modal-overlay" id="resumeModalOverlay"></div>
+    <div class="macos-modal-window resume-modal-window" role="document">
+
+      <div class="macos-modal-header">
+        <div class="modal-traffic-lights">
+          <button class="modal-dot red" id="btnCloseResumeModal" aria-label="Close modal"></button>
+          <span class="modal-dot yellow"></span>
+          <span class="modal-dot green"></span>
+        </div>
+        <div class="modal-window-title" id="modalResumeTitle">AMIT_KUMAR_RESUME.PDF</div>
+        <div class="modal-actions-right">
+          <a href="assets/resume.pdf" download class="modal-download-link mono-meta">DOWNLOAD PDF ↓</a>
+        </div>
+      </div>
+
+      <div class="macos-modal-body resume-modal-body">
+        <!-- Resume Summary Card inside Modal -->
+        <div class="resume-sheet">
+          <div class="resume-sheet-header">
+            <div>
+              <h2 class="resume-sheet-name">AMIT KUMAR</h2>
+              <p class="resume-sheet-subtitle mono-meta">SOFTWARE DEVELOPER · JAVA &amp; WEB TECHNOLOGIES</p>
+            </div>
+            <div class="resume-sheet-contact mono-meta">
+              <span>akrathore7304@gmail.com</span>
+              <span>+91 75820 88819</span>
+              <span>github.com/Amit7304</span>
+            </div>
+          </div>
+
+          <div class="resume-sheet-divider"></div>
+
+          <div class="resume-sheet-section">
+            <h4 class="resume-section-label mono-meta">PROFESSIONAL SUMMARY</h4>
+            <p class="resume-sheet-p">
+              Motivated Computer Science &amp; IT student (Chameli Devi Group of Institutions) with a strong foundation
+              in Java, Object-Oriented Programming, Data Structures &amp; Algorithms, and SQL. Seeking a Software
+              Developer / Java Developer role to build robust, scalable applications.
+            </p>
+          </div>
+
+          <div class="resume-sheet-section">
+            <h4 class="resume-section-label mono-meta">EDUCATION</h4>
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <strong>B.Tech in Computer Science &amp; Information Technology</strong>
+                <span class="mono-meta">Present (6th Sem)</span>
+              </div>
+              <p class="resume-item-desc">Chameli Devi Group of Institutions</p>
+            </div>
+          </div>
+
+          <div class="resume-sheet-section">
+            <h4 class="resume-section-label mono-meta">KEY TECHNICAL SKILLS</h4>
+            <p class="resume-sheet-p">
+              <strong>Languages &amp; Core:</strong> Java (OOP, Collections, Exceptions), C++, JavaScript (ES6+),
+              SQL.<br>
+              <strong>Frameworks &amp; Web:</strong> HTML5, CSS3, JDBC, Spring Boot (Learning), REST APIs.<br>
+              <strong>Databases &amp; Tools:</strong> MySQL, Git, GitHub, VS Code, IntelliJ IDEA.
+            </p>
+          </div>
+
+          <div class="resume-sheet-section">
+            <h4 class="resume-section-label mono-meta">FEATURED PROJECTS</h4>
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <strong>State Arena — Esports Tournament &amp; Analytics Platform</strong>
+                <span class="mono-meta">HTML, CSS, JS, SQL</span>
+              </div>
+            </div>
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <strong>Employee Management System (EMS)</strong>
+                <span class="mono-meta">Java, JDBC, MySQL, DAO</span>
+              </div>
+            </div>
+            <div class="resume-item">
+              <div class="resume-item-top">
+                <strong>Fake News Detection System</strong>
+                <span class="mono-meta">Python, Streamlit, ML</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="resume-sheet-actions">
+            <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <span>OPEN FULL PDF IN NEW TAB ↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JavaScript Bundle -->
+  <script src="script.js?v=20261006_edu"></script>
 </body>
 
 </html>
